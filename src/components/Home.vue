@@ -10,4 +10,6 @@ export default {
     msg: String
   }
 }
+
+// 注视
 </script>
