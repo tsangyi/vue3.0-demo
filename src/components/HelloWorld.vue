@@ -44,11 +44,33 @@
 </template>
 
 <script>
+import {onMounted} from "vue";
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  setup() {
+    let name = '李白';
+    function sayHello() {
+      //注意作用域的问题
+      console.log(name);
+      alert("大家好,我叫李白");
+    }
+    onMounted(sayHello)
+    return {
+      sayHello,
+    }
+  },
+
+  methods: {
+    saywelcom() {
+      alert("欢迎大家")
+    }
+  },
+
+
 }
 </script>
 
