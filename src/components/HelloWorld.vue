@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <!-- 第一次使用ant属性 -->
+    <a-input v-model:value="value" placeholder="Basic usage"/>
     <a-button type="primary" size="small">primary123</a-button>
     <a-button type="primary" shape="round" :size="size">
       <template #icon>
