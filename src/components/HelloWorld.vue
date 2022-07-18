@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import {onMounted} from "vue";
+import {onMounted,reactive} from "vue";
 
 export default {
   name: 'HelloWorld',
@@ -52,13 +52,19 @@ export default {
     msg: String
   },
   setup() {
+    const state = reactive({
+      title: ''
+    })
     let name = '李白';
     function sayHello() {
       //注意作用域的问题
       console.log(name);
       alert("大家好,我叫李白");
     }
-    onMounted(sayHello)
+    onMounted(()=>{
+      state.title = "李白"
+      sayHello
+    })
     return {
       sayHello,
     }
